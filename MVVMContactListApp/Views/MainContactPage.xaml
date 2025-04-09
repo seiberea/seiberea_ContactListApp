@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:MVVMContactListApp.ViewModels"
+             x:Class="MVVMContactListApp.Views.MainContactPage"
+             Title="Main Contact Page">
+             
+    <ContentPage.BindingContext>
+        <viewmodels:MainContactViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <Entry Placeholder="Name" Text="{Binding Name}" />
+            <Entry Placeholder="Email" Text="{Binding Email}" />
+            <Entry Placeholder="Phone Number" Text="{Binding PhoneNumber}" />
+            <Editor Placeholder="Description" HeightRequest="100" Text="{Binding Description}" />
+            <Button Text="Save" Command="{Binding SaveCommand}" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
